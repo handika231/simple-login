@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_login/presentation/page/home_view.dart';
+import 'package:simple_login/presentation/page/login_view.dart';
 
 import 'presentation/routes/navigation.dart';
 
@@ -13,7 +13,7 @@ class AppWidget extends StatelessWidget {
       title: 'Simple Login',
       navigatorKey: navigatorKey,
       routes: routes,
-      initialRoute: HomeView.routeName,
+      initialRoute: LoginView.routeName,
     );
   }
 }
