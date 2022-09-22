@@ -8,7 +8,14 @@ final locator = GetIt.instance;
 
 initLocator() {
   locator.registerLazySingleton<Dio>(() => Dio());
-  locator.registerLazySingleton<ApiService>(() => ApiService(locator()));
+  locator.registerLazySingleton<AuthService>(
+    () => AuthService(
+      locator(),
+    ),
+  );
   locator.registerLazySingleton<LoginNotifier>(
-      () => LoginNotifier(apiService: locator()));
+    () => LoginNotifier(
+      apiService: locator(),
+    ),
+  );
 }

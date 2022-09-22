@@ -5,7 +5,7 @@ import 'package:simple_login/presentation/routes/navigation.dart';
 import '../page/home_view.dart';
 
 class LoginNotifier extends ChangeNotifier {
-  ApiService apiService;
+  AuthService apiService;
   //key form
   final formKey = GlobalKey<FormState>();
   LoginNotifier({required this.apiService});

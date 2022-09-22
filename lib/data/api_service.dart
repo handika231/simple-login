@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 
-class ApiService {
+class AuthService {
   Dio dio;
-  ApiService(this.dio);
+  AuthService(this.dio);
 
   Future login(String email, String password) async {
     final response = await dio.post(
