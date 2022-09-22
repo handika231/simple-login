@@ -3,6 +3,16 @@
 ### Description
 Create simple login app using flutter and API from [reqres.in](https://reqres.in/)
 
+
+### Using API
+
+
+```bash
+  https://reqres.in/api/login
+
+```
+
+
 ### Features
 - Login with email and password
 - Input validation
