@@ -6,9 +6,10 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final data = ModalRoute.of(context)!.settings.arguments;
+    return Scaffold(
       body: Center(
-        child: Text('Home View'),
+        child: Text('$data'),
       ),
     );
   }

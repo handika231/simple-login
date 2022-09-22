@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:simple_login/presentation/page/login_view.dart';
 import 'package:simple_login/presentation/provider/login_notifier.dart';
 
-import 'injector.dart' as di;
 import 'presentation/routes/navigation.dart';
 
 class AppWidget extends StatelessWidget {
@@ -14,7 +13,7 @@ class AppWidget extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => di.locator<LoginNotifier>(),
+          create: (_) => LoginNotifier(),
         )
       ],
       child: MaterialApp(

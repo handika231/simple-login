@@ -16,6 +16,11 @@ class Navigation {
     return navigatorKey.currentState!.pushNamed(routeName);
   }
 
+  static Future pushWithData(String routeName, Object arguments) {
+    return navigatorKey.currentState!
+        .pushNamed(routeName, arguments: arguments);
+  }
+
   static void goBack() {
     return navigatorKey.currentState!.pop();
   }
