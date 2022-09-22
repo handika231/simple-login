@@ -14,6 +14,7 @@ class LoginView extends StatelessWidget {
     var provider = Provider.of<LoginNotifier>(context, listen: false);
     return Scaffold(
       body: Form(
+        key: provider.formKey,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -117,7 +118,9 @@ class LoginView extends StatelessWidget {
                           ),
                         ),
                         onPressed: () async {
-                          await value.signIn();
+                          if (provider.formKey.currentState!.validate()) {
+                            await provider.signIn();
+                          }
                         },
                       ),
               )
