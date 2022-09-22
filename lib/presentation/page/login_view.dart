@@ -98,20 +98,28 @@ class LoginView extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(220, 50),
-                  backgroundColor: Colors.black,
-                ),
-                child: const Text(
-                  'Login',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                onPressed: () async {},
+              Consumer<LoginNotifier>(
+                builder: (context, value, child) => value.isLogin
+                    ? const Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(220, 50),
+                          backgroundColor: Colors.black,
+                        ),
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        onPressed: () async {
+                          await value.signIn();
+                        },
+                      ),
               )
             ],
           ),

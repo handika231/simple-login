@@ -1,10 +1,14 @@
 import 'package:dio/dio.dart';
 
 class ApiService {
-  Dio client;
-  ApiService(this.client);
-  Future signIn() async {
-    final response = await client.get('https://reqres.in/api/users/2');
+  Dio dio;
+  ApiService(this.dio);
+
+  Future login(String email, String password) async {
+    final response = await dio.post(
+      'https://reqres.in/api/login',
+      data: {"email": email, "password": password},
+    );
     return response.data;
   }
 }
